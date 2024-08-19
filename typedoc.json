@@ -1,0 +1,10 @@
+{
+  "plugin": ["@mxssfd/typedoc-theme"],
+  "theme": "my-theme",
+  "readme": "./README.md",
+  "tsconfig": "./tsconfig.bundle.json",
+  "includeVersion": true,
+  "navigationLinks": {
+    "Github": "https://github.com/LucJosin/satori-og/"
+  }
+}
