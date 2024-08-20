@@ -45,9 +45,7 @@ function createSatoriOg(options: SatoriOgOptions): SatoriOgInstance {
       let width = options.satori.width;
       let height = options.satori.height;
       if ('height' in opts && 'width' in opts) {
-        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
         height = parseInt(opts['height']!);
-        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
         width = parseInt(opts['width']!);
       }
 
@@ -76,7 +74,6 @@ function createSatoriOg(options: SatoriOgOptions): SatoriOgInstance {
       const fonts = validatedFonts.map((font) => {
         return {
           name: font.name,
-          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
           data: font.data!,
           weight: font.weight,
           style: font.style,
