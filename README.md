@@ -1,5 +1,7 @@
 # satori-og
 
+![banner](/examples/ts-node/images/banner.png)
+
 The satori-og is a utility library to generate open-graph images using Satori.
 
 - [TypeDoc](https://lucjosin.github.io/satori-og/)
