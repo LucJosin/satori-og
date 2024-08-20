@@ -1,6 +1,6 @@
 # satori-og
 
-The satori-og library is a utility library to generate open-graph images using Satori.
+The satori-og is a utility library to generate open-graph images using Satori.
 
 - [TypeDoc](https://lucjosin.github.io/satori-og/)
 
@@ -12,8 +12,6 @@ The satori-og library is a utility library to generate open-graph images using S
   - [Cdn](#cdn)
 - [Usage](#usage)
   - [Init](#init-client)
-    - [Javascript (UMD)](#javascript-umd)
-    - [Javascript (ESM)](#javascript-esm)
   - [Error handling](#error-handling)
     - [Then/Catch](#thencatch)
     - [Try/Catch](#trycatch)
@@ -44,16 +42,10 @@ yarn add @lucjosin/satori-og
 
 ### Init client
 
-#### Javascript (UMD)
-
 ```js
-// TODO
-```
-
-#### Javascript (ESM)
-
-```js
-// TODO
+import { createSatoriOg } from '<path>';
+const client = createSatoriOg({ ...options });
+console.log('SatoriOG: ', client);
 ```
 
 ### Error handling
@@ -61,13 +53,37 @@ yarn add @lucjosin/satori-og
 #### Then/Catch
 
 ```js
-// TODO
+const result = await generateImage(
+  'default', // render name, defined in options
+  option, // render params/options
+  'default-render', // output file name (without extension)
+)
+  .then((data) => data)
+  .catch((err) => console.error(err));
+
+if (result) {
+  console.log(
+    `Image (${option.render}) generated at '${result.path}' with size ${result.width}x${result.height}`,
+  );
+}
 ```
 
 #### Try/Catch
 
 ```js
-// TODO
+try {
+  const { path, height, width } = await generateImage(
+    'default', // render name, defined in options
+    render.options, // render params/options
+    'default-render', // output file name (without extension)
+  );
+
+  console.log(
+    `Image (${option.render}) generated at '${path}' with size ${width}x${height}`,
+  );
+} catch (err) {
+  console.error(err);
+}
 ```
 
 ## Repository template
