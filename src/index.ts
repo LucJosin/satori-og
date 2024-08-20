@@ -41,6 +41,16 @@ function createSatoriOg(options: SatoriOgOptions): SatoriOgInstance {
         mkdirSync(options.dist);
       }
 
+      // Override width and height if provided in opts
+      let width = options.satori.width;
+      let height = options.satori.height;
+      if ('height' in opts && 'width' in opts) {
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+        height = parseInt(opts['height']!);
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+        width = parseInt(opts['width']!);
+      }
+
       const nodeRender = options.renders[render];
       if (!nodeRender) {
         throw new Error(`Render ${render} not found`);
@@ -56,8 +66,8 @@ function createSatoriOg(options: SatoriOgOptions): SatoriOgInstance {
       if (!options.overwriteImages && existsSync(imagePath)) {
         return {
           path: imagePath,
-          width: options.satori.width,
-          height: options.satori.height,
+          width: width,
+          height: height,
         };
       }
 
@@ -73,8 +83,9 @@ function createSatoriOg(options: SatoriOgOptions): SatoriOgInstance {
         };
       });
 
+      const satoriOpts = { ...options.satori, height, width };
       const svg = await satori(nodeRender(opts), {
-        ...options.satori,
+        ...satoriOpts,
         fonts: fonts,
       });
 
