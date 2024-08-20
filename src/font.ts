@@ -7,7 +7,6 @@ export async function validateFonts(
 ): Promise<SatoriFontOptions[]> {
   const validatedFonts: SatoriFontOptions[] = [];
   if (!existsSync('.fonts/')) {
-    console.info('No font cache found');
     mkdirSync('.fonts/');
   }
 
@@ -21,9 +20,6 @@ export async function validateFonts(
       `${font.name}-${font.style}-${font.weight}.ttf`.toLocaleLowerCase();
     if (existsSync(`.fonts/${fontFile}`)) {
       const fontData = await readFile(`.fonts/${fontFile}`);
-
-      console.info(`Font ${fontFile} found in cache`);
-
       font.data = fontData.buffer;
       validatedFonts.push(font);
       continue;
@@ -47,7 +43,6 @@ export async function validateFonts(
         throw new Error(`Failed to write font: ${error}`);
       }
 
-      console.info(`Font ${fontFile} saved to cache`);
       validatedFonts.push(font);
       continue;
     }
