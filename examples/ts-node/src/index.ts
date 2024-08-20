@@ -2,6 +2,7 @@ import { createSatoriOg } from '@lucjosin/satori-og';
 import { SatoriOptions } from '@lucjosin/satori-og/dist/types/types';
 import render1 from './render1';
 import render2 from './render2';
+import banner from './banner';
 
 (async () => {
   const satoriOptions: SatoriOptions = {
@@ -26,20 +27,29 @@ import render2 from './render2';
   const { generateImage } = createSatoriOg({
     satori: satoriOptions,
     dist: './images',
-    overwriteImages: false,
+    overwriteImages: true,
     renders: {
-      default: render1,
+      default: banner,
+      render1: render1,
       render2: render2,
     },
   });
 
   const options = [
     {
-      fileName: 'render-1',
+      fileName: 'banner',
       render: 'default',
+      height: '250',
+      width: '1200',
       title: 'Satori OG',
       description:
         'A utility library to generate open-graph images using Satori',
+    },
+    {
+      fileName: 'render-1',
+      render: 'render1',
+      title: 'Lorem Ipsum',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     },
     {
       fileName: 'render-2',
