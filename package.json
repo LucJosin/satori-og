@@ -1,0 +1,90 @@
+{
+  "name": "@lucjosin/satori-og",
+  "packageManager": "yarn@4.0.1",
+  "description": "A utility library to generate open-graph images using Satori",
+  "version": "1.0.0",
+  "repository": "git@github.com:LucJosin/satori-og.git",
+  "author": {
+    "name": "Lucas Josino",
+    "username": "LucJosin",
+    "email": "contact@lucasjosino.com",
+    "url": "https://www.lucasjosino.com"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
+  "homepage": "https://github.com/LucJosin/satori-og/",
+  "bugs": {
+    "url": "https://github.com/LucJosin/satori-og/issues",
+    "email": "contat@lucasjosino.com"
+  },
+  "license": "BSD-3-Clause",
+  "keywords": [
+    "satori",
+    "satori-og",
+    "open-graph"
+  ],
+  "types": "dist/types/index.d.ts",
+  "cdn": "dist/index.umd.min.js",
+  "main": "dist/index.min.js",
+  "unpkg": "dist/index.umd.min.js",
+  "module": "dist/index.esm.min.js",
+  "jsdelivr": "dist/index.umd.min.js",
+  "umd:main": "dist/index.umd.min.js",
+  "files": [
+    "dist/"
+  ],
+  "exports": {
+    ".": [
+      {
+        "types": "./dist/types/index.d.ts",
+        "import": "./dist/index.min.mjs",
+        "require": "./dist/index.min.cjs",
+        "default": "./dist/index.min.js"
+      },
+      "./dist/index.min.js"
+    ]
+  },
+  "scripts": {
+    "test": "jest",
+    "test:cover": "rm -rf ./coverage/ && jest --coverage",
+    "lint": "eslint \"*/**/*.{ts,js}\"",
+    "lint:fix": "eslint \"*/**/*.{ts,js}\" --fix",
+    "clear": "rm -rf ./dist/",
+    "clear:docs": "rm -rf ./docs/",
+    "build": "yarn clear && rollup --config ./rollup.config.mjs && yarn build:types",
+    "build:doc": "typedoc src/index.ts",
+    "build:types": "yarn tsc --emitDeclarationOnly -p tsconfig.bundle.json",
+    "publish": "yarn lint && yarn test && yarn build && npm publish --access public",
+    "publish:dry": "yarn lint && yarn test && yarn build",
+    "publish:dry-wot": "yarn lint && yarn build"
+  },
+  "devDependencies": {
+    "@mxssfd/typedoc-theme": "^1.1.6",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@types/eslint": "^8.44.7",
+    "@types/jest": "^29.5.12",
+    "@types/prettier": "^2.7.2",
+    "@types/react": "^18.3.3",
+    "@typescript-eslint/eslint-plugin": "^5.47.0",
+    "@typescript-eslint/parser": "^5.47.0",
+    "eslint": "^8.53.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "jest": "^29.7.0",
+    "prettier": "^2.8.1",
+    "rollup": "^2.79.1",
+    "rollup-plugin-typescript2": "^0.36.0",
+    "ts-jest": "^29.2.4",
+    "ts-jest-resolver": "^2.0.1",
+    "typedoc": "^0.26.6",
+    "typescript": "^4.9.4"
+  },
+  "dependencies": {
+    "@resvg/resvg-js": "^2.6.2",
+    "satori": "^0.10.14",
+    "satori-html": "^0.3.2",
+    "svgo": "^3.3.2"
+  }
+}
