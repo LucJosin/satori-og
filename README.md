@@ -9,19 +9,17 @@
 
 ## Introduction
 
-The **satori-og** is a utility library to generate **Open Graph** images using [Satori](https://github.com/vercel/satori). This tool is particularly useful for developers looking to enhance the visual of their websites or blogs by automating the creation of custom **Open Graph** images.
+The **satori-og** is a utility library for generating custom **Open Graph** images using [Satori](https://github.com/vercel/satori). It’s perfect for developers wanting to enhance their websites or blogs with automated images.
 
-Using this library you will be able to create a "client" with default options (dist, height, width, fonts, renders) and once configured, generating and saving images is as simple as calling the `generateImage` function, which will store the output in a specified folder.
+With **satori-og**, you can create a "client" with default settings (e.g., dimensions, fonts, renders) and generate images easily by calling the generateImage function. The "client" requires a render parameter, allowing you to build dynamic images with **ReactNode/JSX**. You can define multiple **renders** and select the appropriate one when generating images.
 
-The "client" configuration will require the `render` param. Each render is built using **ReactNode/JSX**, giving you the ability to create dynamic and custom images. You can define multiple **renders** and choose the desired render when calling `generateImage`.
-
-Using the [Satori Playground](https://satori-playground.vercel.app/) allows you to experiment with different designs and easily integrate them into your project. _See some simple render examples in [example/ts-node](./examples/ts-node/src/)_
+Use the [Satori Playground](https://satori-playground.vercel.app/) to experiment with designs and integrate them into your project. Check out examples in [example/ts-node](./examples/ts-node/src/).
 
 ## Use case
 
-The **satori-og** library is designed to integrate with **SSG** _(Static Site Generation)_ frameworks, with a primary focus on [astro.build](https://astro.build). It allows developers to pre-define custom renders and generate distinct **Open Graph** images customized to different pages of their website (e.g: using the Props, define the render type like _default, blog, project, etc..._).
+The **satori-og** library is designed to integrate with **SSG** _(Static Site Generation)_ frameworks, with a primary focus on [astro.build](https://astro.build). It lets you **pre-define** renders for different page types (e.g., default, blog, project), offering more flexibility than standard **Open Graph** generators. You can customize images by choosing a render and passing any parameters to `generateImage`.
 
-Generating image in this way, you can choose what render to use and the the options to pass any param to `generateImage`. Unlike other Open Graph generators that may limit you to basic parameters like title, description, or author, satori-og allows for a broader range of options, enabling you to tailor the images exactly to your needs.
+Simple Astro example:
 
 ```astro
 ---
