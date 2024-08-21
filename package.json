@@ -83,8 +83,6 @@
   },
   "dependencies": {
     "@resvg/resvg-js": "^2.6.2",
-    "satori": "^0.10.14",
-    "satori-html": "^0.3.2",
-    "svgo": "^3.3.2"
+    "satori": "^0.10.14"
   }
 }
