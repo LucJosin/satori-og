@@ -48,7 +48,9 @@ import banner from './banner';
     {
       fileName: 'banner-wide',
       render: 'default',
-      descriptionFontSize: '0.8em',
+      height: '630',
+      width: '1100',
+      descriptionFontSize: '0.9em',
       title: 'Satori OG',
       description:
         'A utility library to generate open-graph images using Satori',
