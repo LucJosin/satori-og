@@ -2,8 +2,8 @@
 
 ![banner](/examples/ts-node/images/banner.png)
 
-[![npmjs](https://shields.io/badge/NPMJS-%232d3d85?style=for-the-badge&labelColor=%232d3d85)](https://npmjs.com/package/satori-og)
-[![TypeDoc](https://shields.io/badge/TypeDoc-%232d3d85?style=for-the-badge&labelColor=%232d3d85)](https://lucjosin.github.io/satori-og/)
+[![npmjs](https://shields.io/badge/NPMJS-%23325e69?style=for-the-badge&labelColor=%23325e69)](https://npmjs.com/package/satori-og)
+[![TypeDoc](https://shields.io/badge/TypeDoc-%23325e69?style=for-the-badge&labelColor=%23325e69)](https://lucjosin.github.io/satori-og/)
 
 </div>
 
@@ -17,7 +17,7 @@ Use the [Satori Playground](https://satori-playground.vercel.app/) to experiment
 
 ## Use case
 
-The **satori-og** library is designed to integrate with **SSG** _(Static Site Generation)_ frameworks, with a primary focus on [astro.build](https://astro.build). It lets you **pre-define** renders for different page types (e.g., default, blog, project), offering more flexibility than standard **Open Graph** generators. You can customize images by choosing a render and passing any parameters to `generateImage`.
+The **satori-og** library is designed to integrate with **SSG** _(Static Site Generation)_ frameworks like [astro.build](https://astro.build). It lets you **pre-define** renders for different page types (e.g., default, blog, project), offering more flexibility than standard **Open Graph** generators. You can customize images by choosing a render and passing any parameters to `generateImage`.
 
 Simple Astro example:
 

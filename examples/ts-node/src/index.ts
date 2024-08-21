@@ -40,7 +40,15 @@ import banner from './banner';
       fileName: 'banner',
       render: 'default',
       height: '250',
-      width: '1200',
+      width: '1100',
+      title: 'Satori OG',
+      description:
+        'A utility library to generate open-graph images using Satori',
+    },
+    {
+      fileName: 'banner-wide',
+      render: 'default',
+      descriptionFontSize: '0.8em',
       title: 'Satori OG',
       description:
         'A utility library to generate open-graph images using Satori',
