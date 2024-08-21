@@ -23,19 +23,19 @@ The satori-og is a utility library to generate open-graph images using Satori.
 ### Npm
 
 ```
-npm install @lucjosin/satori-og
+npm install satori-og
 ```
 
 ### Yarn
 
 ```
-yarn add @lucjosin/satori-og
+yarn add satori-og
 ```
 
 ### Cdn
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/@lucjosin/satori-og/dist/index.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/satori-og/dist/index.umd.min.js"></script>
 ```
 
 ## Usage
