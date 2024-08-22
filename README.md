@@ -2,8 +2,8 @@
 
 ![banner](/examples/ts-node/images/banner.png)
 
-[![npmjs](https://shields.io/badge/NPMJS-%23325e69?style=for-the-badge&labelColor=%23325e69)](https://npmjs.com/package/satori-og)
-[![TypeDoc](https://shields.io/badge/TypeDoc-%23325e69?style=for-the-badge&labelColor=%23325e69)](https://lucjosin.github.io/satori-og/)
+[![npmjs](https://shields.io/badge/NPMJS-%231b263b80?style=for-the-badge&labelColor=%231b263b80)](https://npmjs.com/package/satori-og)
+[![TypeDoc](https://shields.io/badge/TypeDoc-%231b263b80?style=for-the-badge&labelColor=%231b263b80)](https://lucjosin.github.io/satori-og/)
 
 </div>
 
