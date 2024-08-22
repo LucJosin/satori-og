@@ -5,16 +5,6 @@ __metadata:
   version: 8
   cacheKey: 10c0
 
-"@lucjosin/satori-og@file:../../::locator=ts-node%40workspace%3A.":
-  version: 1.0.0
-  resolution: "@lucjosin/satori-og@file:../../#../../::hash=c59aa0&locator=ts-node%40workspace%3A."
-  dependencies:
-    "@resvg/resvg-js": "npm:^2.6.2"
-    satori: "npm:^0.10.14"
-  checksum: 4fe789476cdc6fc10d2154871a77eeb0117e495f30d6fb6b60bfc7cf808dce3bee114fe951a22613d5308523597d682cac7cce9d77909243c3ae4aa39a382aef
-  languageName: node
-  linkType: hard
-
 "@resvg/resvg-js-android-arm-eabi@npm:2.6.2":
   version: 2.6.2
   resolution: "@resvg/resvg-js-android-arm-eabi@npm:2.6.2"
@@ -307,6 +297,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"satori-og@file:../../dist/satori-og-1.0.0.tgz::locator=ts-node%40workspace%3A.":
+  version: 1.0.0
+  resolution: "satori-og@file:../../dist/satori-og-1.0.0.tgz#../../dist/satori-og-1.0.0.tgz::hash=f96543&locator=ts-node%40workspace%3A."
+  dependencies:
+    "@resvg/resvg-js": "npm:^2.6.2"
+    satori: "npm:^0.10.14"
+  checksum: e637c7491717603b5f69ced30e8c953c300b78a9e36e9ff91e86393f60475d14c1df6d2357e5bd18714b80bf29a276e8471c0ec6fe3b9aa6936f2a54fe6eed47
+  languageName: node
+  linkType: hard
+
 "satori@npm:^0.10.14":
   version: 0.10.14
   resolution: "satori@npm:0.10.14"
@@ -343,9 +343,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "ts-node@workspace:."
   dependencies:
-    "@lucjosin/satori-og": "file:../../"
     "@types/node": "npm:^20.4.1"
     react: "npm:^18.3.1"
+    satori-og: "file:../../dist/satori-og-1.0.0.tgz"
     typescript: "npm:^5.1.6"
   languageName: unknown
   linkType: soft

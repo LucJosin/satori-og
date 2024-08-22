@@ -1,5 +1,4 @@
-import { createSatoriOg } from '@lucjosin/satori-og';
-import { SatoriOptions } from '@lucjosin/satori-og/dist/types/types';
+import { createSatoriOg, SatoriOptions } from 'satori-og';
 import render1 from './render1';
 import render2 from './render2';
 import banner from './banner';
