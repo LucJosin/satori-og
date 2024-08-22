@@ -1,0 +1,32 @@
+{
+  "name": "astro",
+  "type": "module",
+  "private": true,
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.3",
+    "@astrojs/mdx": "^3.1.4",
+    "@astrojs/react": "^3.6.2",
+    "@astrojs/rss": "^4.0.7",
+    "@astrojs/sitemap": "^3.1.6",
+    "@types/react": "^18.3.4",
+    "@types/react-dom": "^18.3.0",
+    "astro": "^4.14.3",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-astro": "^0.31.4",
+    "prettier": "^3.3.1",
+    "prettier-plugin-astro": "^0.14.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "satori-og": "file:../../dist/satori-og-1.0.0.tgz",
+    "typescript": "^5.5.4"
+  }
+}

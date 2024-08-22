@@ -1,0 +1,41 @@
+---
+import { type CollectionEntry, getCollection } from 'astro:content';
+import BlogPost from '../../layouts/BlogLayout.astro';
+import { getOpenGraphPath } from '../../open-graph';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return Promise.all(
+    posts.map(async (post) => ({
+      params: { slug: post.slug },
+      props: post,
+    }))
+  );
+}
+type Props = CollectionEntry<'blog'>;
+
+const post = Astro.props;
+const { Content } = await post.render();
+
+const { title, description, pubDate, updatedDate } = post.data;
+
+// Only generate image when building the project
+if (import.meta.env.PROD) {
+  post.data.heroImage = await getOpenGraphPath(
+    'blog',
+    {
+      title,
+      description,
+      pubDate: pubDate.toUTCString(),
+      updatedDate: updatedDate?.toUTCString() || '',
+    },
+    post.slug
+  );
+
+  post.data.heroImage = post.data.heroImage.replace('./dist', '');
+}
+---
+
+<BlogPost {...post.data}>
+  <Content />
+</BlogPost>

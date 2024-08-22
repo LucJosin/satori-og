@@ -1,0 +1,45 @@
+---
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import Layout from '../layouts/Layout.astro';
+import { getOpenGraphPath } from '../open-graph';
+
+// Only generate image when building the project
+let openGraphImage: string = '/blog-placeholder-1.jpg';
+if (import.meta.env.PROD) {
+  openGraphImage = await getOpenGraphPath(
+    'default',
+    { title: SITE_TITLE, description: SITE_DESCRIPTION },
+    'index'
+  );
+  openGraphImage = openGraphImage.replace('./dist', '');
+}
+---
+
+<Layout
+  title={SITE_TITLE}
+  description={SITE_DESCRIPTION}
+  heroImage={openGraphImage}
+>
+  <img src={openGraphImage} />
+  <h1>Satori OG</h1>
+  <h4>Astro Example</h4>
+  <p>
+    This <a href="https://astro.build/">Astro</a> blog starter template is a built
+    version using
+    <a
+      href="https://github.com/LucJosin/satori-og/examples/astro/"
+      target="_blank"
+      rel="noreferrer">Satori OG and Astro</a
+    >
+  </p>
+  <p>
+    Go go <a href="/blog">blog</a> page to see the list of blog posts and the
+    <strong>Open Graph</strong> images generated for each post.
+  </p>
+</Layout>
+
+<style>
+  img {
+    margin: 0 0 2rem 0;
+  }
+</style>
