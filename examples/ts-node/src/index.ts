@@ -69,13 +69,7 @@ import banner from './banner';
     },
   ];
   for (const option of options) {
-    const { path, height, width } = await generateImage(
-      option.render,
-      option,
-      option.fileName,
-    );
-    console.log(
-      `Image (${option.render}) generated at: ${path} with size ${width}x${height}`,
-    );
+    const path = await generateImage(option.render, option, option.fileName);
+    console.log(`Image (${option.render}) generated at: ${path}`);
   }
 })();

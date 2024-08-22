@@ -13,7 +13,7 @@ export default function banner(opts: Record<string, string>): ReactNode {
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        background: 'linear-gradient(30deg, #0e2024, #325e69, #0e2024)',
+        background: 'linear-gradient(30deg, #0e2024, #292b3c, #0e2024)',
         fontSize: '2.3em',
         fontWeight: 600,
         color: 'white',
@@ -72,12 +72,12 @@ export default function banner(opts: Record<string, string>): ReactNode {
           style={{
             height: '100px',
             width: '140px',
-            border: '4px solid #325e6980',
+            border: '4px solid #292b3c80',
             borderRadius: '30px',
             alignItems: 'center',
             justifyContent: 'center',
             backgroundColor: '#fff',
-            color: '#325e69',
+            color: '#292b3c',
             margin: '0',
             textTransform: 'uppercase',
           }}>

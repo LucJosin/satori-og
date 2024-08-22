@@ -7,11 +7,11 @@ __metadata:
 
 "@lucjosin/satori-og@file:../../::locator=ts-node%40workspace%3A.":
   version: 1.0.0
-  resolution: "@lucjosin/satori-og@file:../../#../../::hash=d1bddc&locator=ts-node%40workspace%3A."
+  resolution: "@lucjosin/satori-og@file:../../#../../::hash=c59aa0&locator=ts-node%40workspace%3A."
   dependencies:
     "@resvg/resvg-js": "npm:^2.6.2"
     satori: "npm:^0.10.14"
-  checksum: b115385824b0d588fe0ff63da138b0745313e0173d7f497f16c740c1383054c1a4031a945c4ecb17d686059129bd67681b18c9193818d6e0a03ee6a6788f8b04
+  checksum: 4fe789476cdc6fc10d2154871a77eeb0117e495f30d6fb6b60bfc7cf808dce3bee114fe951a22613d5308523597d682cac7cce9d77909243c3ae4aa39a382aef
   languageName: node
   linkType: hard
 
