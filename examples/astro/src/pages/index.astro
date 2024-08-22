@@ -33,8 +33,35 @@ if (import.meta.env.PROD) {
     >
   </p>
   <p>
-    Go go <a href="/blog">blog</a> page to see the list of blog posts and the
+    Go to <a href="/blog">blog</a> page to see the list of blog posts and the
     <strong>Open Graph</strong> images generated for each post.
+  </p>
+  <h2>Introduction</h2>
+  <p>
+    The <strong>satori-og</strong> is a utility library for generating custom <strong
+      >Open Graph</strong
+    > images using <a href="https://github.com/vercel/satori" target="_blank"
+      >Satori</a
+    >. It's perfect for developers wanting to enhance their websites or blogs
+    with automated images.
+  </p>
+  <p>
+    With <strong>satori-og</strong>, you can create a "client" with default
+    settings (e.g., dimensions, fonts, renders) and generate images easily by
+    calling the <code>generateImage</code> function. The "client" requires a render
+    parameter, allowing you to build dynamic images with <strong
+      >ReactNode/JSX</strong
+    >. You can define multiple <strong>renders</strong> and select the appropriate
+    one when generating images.
+  </p>
+  <p>
+    Use the <a href="https://satori-playground.vercel.app/" target="_blank"
+      >Satori Playground</a
+    > to experiment with designs and integrate them into your project. Check out
+    examples in <a
+      href="https://github.com/LucJosin/satori-og/blob/main/examples/"
+      target="_blank">example/ts-node</a
+    >.
   </p>
 </Layout>
 
