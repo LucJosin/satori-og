@@ -47,6 +47,7 @@
     ]
   },
   "scripts": {
+    "pk": "yarn pack --out ./dist/%s-%v.tgz",
     "test": "jest",
     "test:cover": "rm -rf ./coverage/ && jest --coverage",
     "lint": "eslint \"*/**/*.{ts,js}\"",
