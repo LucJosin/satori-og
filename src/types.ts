@@ -2,12 +2,6 @@ import type { ReactNode } from 'react';
 
 export type RenderFunction = (opts: Record<string, string>) => ReactNode;
 
-export interface ImageResult {
-  path: string;
-  height: number;
-  width: number;
-}
-
 export interface SatoriOgInstance {
   /**
    * Generate an image given a render name and options
@@ -20,7 +14,7 @@ export interface SatoriOgInstance {
     render: string,
     opts: Record<string, string>,
     name?: string,
-  ) => Promise<ImageResult>;
+  ) => Promise<string>;
 }
 
 export interface SatoriOgOptions {
@@ -40,6 +34,10 @@ export interface SatoriOgOptions {
    * Define if images from dist should be overwritten
    */
   overwriteImages?: boolean;
+  /**
+   * Define if image paths should be cached
+   */
+  cacheImagePath?: boolean;
 }
 
 // Types copied from Satori

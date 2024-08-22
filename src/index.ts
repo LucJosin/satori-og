@@ -1,5 +1,4 @@
 import type {
-  ImageResult,
   SatoriFontOptions,
   SatoriOgInstance,
   SatoriOgOptions,
@@ -13,6 +12,8 @@ import { validateFonts } from './font';
 
 // Instance is a singleton
 let instance: SatoriOgInstance | null = null;
+
+const cachedImages: Record<string, string> = {};
 
 /**
  * Create a SatoriOg instance
@@ -36,7 +37,7 @@ function createSatoriOg(options: SatoriOgOptions): SatoriOgInstance {
       render: string,
       opts: Record<string, string>,
       name?: string,
-    ): Promise<ImageResult> => {
+    ): Promise<string> => {
       if (!existsSync(options.dist)) {
         mkdirSync(options.dist);
       }
@@ -58,15 +59,16 @@ function createSatoriOg(options: SatoriOgOptions): SatoriOgInstance {
       if (!imageName) {
         const random = Math.random().toString(36).substring(8);
         imageName = `${render}-${random}`;
+      } else {
+        const cachedPath = getImagePath(imageName);
+        if (options.cacheImagePath && cachedPath) {
+          return cachedPath;
+        }
       }
 
       const imagePath = options.dist + imageName + '.png';
       if (!options.overwriteImages && existsSync(imagePath)) {
-        return {
-          path: imagePath,
-          width: width,
-          height: height,
-        };
+        return imagePath;
       }
 
       const validatedFonts = await validateFonts(options.satori.fonts);
@@ -94,13 +96,24 @@ function createSatoriOg(options: SatoriOgOptions): SatoriOgInstance {
         throw new Error(`Failed to write image: ${error}`);
       }
 
-      return {
-        path: imagePath,
-        width: resvgRender.width,
-        height: resvgRender.height,
-      };
+      if (options.cacheImagePath) {
+        cachedImages[imageName] = imagePath;
+      }
+
+      return imagePath;
     },
   };
+}
+
+/**
+ * Get image path from cache.
+ *
+ * The cache is populated when 'cacheImagePath' is set to true in SatoriOgOptions
+ * @param id - Image id
+ * @returns Image path
+ */
+export function getImagePath(id: string): string | undefined {
+  return cachedImages[id];
 }
 
 function normalizeDist(dist: string): string {
