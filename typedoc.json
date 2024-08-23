@@ -1,4 +1,5 @@
 {
+  "out": "./docs",
   "plugin": ["@mxssfd/typedoc-theme"],
   "theme": "my-theme",
   "readme": "./README.md",

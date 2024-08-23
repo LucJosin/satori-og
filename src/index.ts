@@ -1,4 +1,5 @@
 import type {
+  RenderFunction,
   SatoriFontOptions,
   SatoriOgInstance,
   SatoriOgOptions,
@@ -126,6 +127,8 @@ export {
   SatoriOgOptions,
   SatoriFontOptions,
   SatoriOptions,
+  SatoriOgInstance,
+  RenderFunction,
   createSatoriOg,
   createSatoriOgInstance,
 };

@@ -1,0 +1,40 @@
+name: 'Build and Publish docs'
+
+on:
+  push:
+    tags:
+      - 'v[0-9].[0-9]+.[0-9]'
+  workflow_dispatch:
+
+jobs:
+  build-publish-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up yarn (Node 20)
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'yarn'
+
+      - name: Install dependencies
+        run: yarn install
+
+      ## Docs
+
+      - name: Build docs
+        run: yarn build:doc
+
+      - name: Deploy docs
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs
+          publish_branch: ph-pages
+          enable_jekyll: false
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'

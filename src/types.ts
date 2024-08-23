@@ -1,7 +1,15 @@
 import type { ReactNode } from 'react';
 
+/**
+ * Render function
+ * @param opts - Render function options
+ * @returns ReactNode
+ */
 export type RenderFunction = (opts: Record<string, string>) => ReactNode;
 
+/**
+ * SatoriOg instance
+ */
 export interface SatoriOgInstance {
   /**
    * Generate an image given a render name and options
@@ -17,6 +25,9 @@ export interface SatoriOgInstance {
   ) => Promise<string>;
 }
 
+/**
+ * SatoriOg options
+ */
 export interface SatoriOgOptions {
   /**
    * Output directory
@@ -40,7 +51,11 @@ export interface SatoriOgOptions {
   cacheImagePath?: boolean;
 }
 
-// Types copied from Satori
+/**
+ * Satori font options
+ *
+ * OBS: Types copied from Satori
+ */
 export interface SatoriFontOptions {
   url?: string;
   data?: ArrayBuffer;
@@ -49,6 +64,11 @@ export interface SatoriFontOptions {
   style: 'normal' | 'italic';
 }
 
+/**
+ * Satori options
+ *
+ * OBS: Types copied from Satori
+ */
 export interface SatoriOptions {
   width: number;
   height: number;
