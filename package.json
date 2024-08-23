@@ -1,6 +1,5 @@
 {
   "name": "satori-og",
-  "packageManager": "yarn@4.0.1",
   "description": "A utility library to generate open-graph images using Satori",
   "version": "1.0.0",
   "repository": "git@github.com:LucJosin/satori-og.git",
