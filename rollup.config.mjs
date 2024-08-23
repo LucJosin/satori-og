@@ -63,17 +63,6 @@ const options = {
       format: 'esm',
       plugins: [terser()],
     }),
-    createOutputOptions({
-      file: './dist/index.umd.min.js',
-      format: 'umd',
-      plugins: [terser()],
-      globals: {
-        'satori': 'Satori',
-        '@resvg/resvg-js': 'resvgJs',
-        'node:fs': 'node_fs',
-        'node:fs/promises': 'promises',
-      },
-    }),
   ],
   plugins: [
     typescript2({
