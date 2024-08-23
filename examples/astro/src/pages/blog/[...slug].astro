@@ -19,21 +19,16 @@ const { Content } = await post.render();
 
 const { title, description, pubDate, updatedDate } = post.data;
 
-// Only generate image when building the project
-if (import.meta.env.PROD) {
-  post.data.heroImage = await getOpenGraphPath(
-    'blog',
-    {
-      title,
-      description,
-      pubDate: pubDate.toUTCString(),
-      updatedDate: updatedDate?.toUTCString() || '',
-    },
-    post.slug
-  );
-
-  post.data.heroImage = post.data.heroImage.replace('./dist', '');
-}
+post.data.heroImage = await getOpenGraphPath(
+  'blog',
+  {
+    title,
+    description,
+    pubDate: pubDate.toUTCString(),
+    updatedDate: updatedDate?.toUTCString() || '',
+  },
+  post.slug
+);
 ---
 
 <BlogPost {...post.data}>

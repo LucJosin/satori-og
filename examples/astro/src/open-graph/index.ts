@@ -40,7 +40,7 @@ export async function getOpenGraphPath(
   // const satoriOg =  createSatoriOg({...})
   const instance = createSatoriOgInstance({
     satori: satoriOptions,
-    dist: './dist/public',
+    dist: './public/open-graph',
     overwriteImages: false,
     cacheImagePath: true,
     renders: {
@@ -49,9 +49,6 @@ export async function getOpenGraphPath(
     },
   });
 
-  return await instance.generateImage(render, data, name);
-}
-
-export function getFixedImagePath(path: string) {
-  return path.replace('./dist', '');
+  const path = await instance.generateImage(render, data, name);
+  return path.replace('./public', '');
 }

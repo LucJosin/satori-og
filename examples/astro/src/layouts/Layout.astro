@@ -20,20 +20,12 @@ const { title, description, heroImage } = Astro.props;
 
   <body>
     <Header />
-    <div class="satori-og-banner">
-      <p>
-        <strong>Notice</strong>: During the <span>build</span> process, the image
-        will be replaced with the generated <strong>Open Graph</strong> image.
-      </p>
-      <p>
-        In <span>development</span> mode, a <strong>custom</strong> placeholder image
-        is used instead.
-      </p>
-      <p>
-        Current image: <a href={heroImage} target="_blank">{heroImage}</a>.
-      </p>
-    </div>
     <main>
+      <div class="satori-og-banner">
+        <p>
+          Current image: <a href={heroImage} target="_blank">{heroImage}</a>.
+        </p>
+      </div>
       <slot />
     </main>
     <Footer />

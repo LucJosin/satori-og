@@ -9,36 +9,30 @@ const posts = (await getCollection('blog')).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 
-let openGraphImage: string = '/blog-placeholder-1.jpg';
-// Only generate image when building the project
-if (import.meta.env.PROD) {
-  // Update the heroImage property of each post
-  await Promise.all(
-    posts.map(async (post) => {
-      const { title, description, pubDate, updatedDate } = post.data;
+// Update the heroImage property of each post
+await Promise.all(
+  posts.map(async (post) => {
+    const { title, description, pubDate, updatedDate } = post.data;
 
-      post.data.heroImage = await getOpenGraphPath(
-        'blog',
-        {
-          title,
-          description,
-          pubDate: pubDate.toUTCString(),
-          updatedDate: updatedDate?.toUTCString() || '',
-        },
-        post.slug
-      );
-    })
-  );
+    post.data.heroImage = await getOpenGraphPath(
+      'blog',
+      {
+        title,
+        description,
+        pubDate: pubDate.toUTCString(),
+        updatedDate: updatedDate?.toUTCString() || '',
+      },
+      post.slug
+    );
+  })
+);
 
-  // Update the heroImage property from the current page
-  openGraphImage = await getOpenGraphPath(
-    'blog',
-    { title: SITE_TITLE, description: SITE_DESCRIPTION },
-    'blog'
-  );
-
-  openGraphImage = openGraphImage.replace('./dist', '');
-}
+// Update the heroImage property from the current page
+const openGraphImage = await getOpenGraphPath(
+  'blog',
+  { title: SITE_TITLE, description: SITE_DESCRIPTION },
+  'blog'
+);
 ---
 
 <Layout

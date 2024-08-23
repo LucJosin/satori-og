@@ -72,7 +72,7 @@ export default function blogRender(opts: Record<string, string>): ReactNode {
         <p
           style={{
             margin: 0,
-            fontSize: '0.7em',
+            fontSize: '0.8em',
             textAlign: 'center',
             fontWeight: 300,
           }}

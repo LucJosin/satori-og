@@ -3,16 +3,11 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 import Layout from '../layouts/Layout.astro';
 import { getOpenGraphPath } from '../open-graph';
 
-// Only generate image when building the project
-let openGraphImage: string = '/blog-placeholder-1.jpg';
-if (import.meta.env.PROD) {
-  openGraphImage = await getOpenGraphPath(
-    'default',
-    { title: SITE_TITLE, description: SITE_DESCRIPTION },
-    'index'
-  );
-  openGraphImage = openGraphImage.replace('./dist', '');
-}
+const openGraphImage = await getOpenGraphPath(
+  'default',
+  { title: SITE_TITLE, description: SITE_DESCRIPTION },
+  'index'
+);
 ---
 
 <Layout

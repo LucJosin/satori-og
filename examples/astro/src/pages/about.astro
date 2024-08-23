@@ -4,15 +4,11 @@ import { getOpenGraphPath } from '../open-graph';
 
 const title = 'About Me';
 const description = 'Lorem ipsum dolor sit amet';
-let openGraphImage: string = '/blog-placeholder-about.jpg';
-if (import.meta.env.PROD) {
-  openGraphImage = await getOpenGraphPath(
-    'default',
-    { title, description },
-    'about'
-  );
-  openGraphImage = openGraphImage.replace('./dist', '');
-}
+const openGraphImage = await getOpenGraphPath(
+  'default',
+  { title, description },
+  'about'
+);
 ---
 
 <Layout
