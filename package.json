@@ -26,12 +26,8 @@
     "open-graph"
   ],
   "types": "dist/types/index.d.ts",
-  "cdn": "dist/index.umd.min.js",
   "main": "dist/index.min.js",
-  "unpkg": "dist/index.umd.min.js",
   "module": "dist/index.esm.min.js",
-  "jsdelivr": "dist/index.umd.min.js",
-  "umd:main": "dist/index.umd.min.js",
   "files": [
     "dist/"
   ],
